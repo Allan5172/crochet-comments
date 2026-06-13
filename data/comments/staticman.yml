@@ -1,29 +1,14 @@
-<form action="https://staticman-next-js.vercel.app/v3/entry/github/YOUR_USERNAME/crochet-comments/main/comments" method="POST">
-  
-  <!-- Name -->
-  <input 
-    name="fields[name]" 
-    placeholder="Your name" 
-    required
-    style="display:block;width:100%;padding:10px;margin-bottom:10px;"
-  >
-
-  <!-- Comment text -->
-  <textarea 
-    name="fields[text]" 
-    placeholder="Write a comment..." 
-    required
-    style="display:block;width:100%;height:120px;padding:10px;margin-bottom:10px;"
-  ></textarea>
-
-  <!-- Staticman auto-generates the date, but we include a hidden field to ensure it is stored -->
-  <input type="hidden" name="fields[date]" value="">
-  
-  <button 
-    type="submit"
-    style="padding:10px 20px;cursor:pointer;"
-  >
-    Post Comment
-  </button>
-
-</form>
+comments:
+  allowedFields: ["name", "text"]
+  branch: "main"
+  commitMessage: "New comment"
+  filename: "comment-{@timestamp}"
+  format: "yaml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "iso8601"
+  moderation: false
+  path: "data/comments"
+  requiredFields: ["name", "text"]
